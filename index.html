@@ -1,0 +1,52 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <header class="flex justify-center align-center">
+                <img src="./images/salad-bar-logo.png" alt="kay's salad bar logo">
+            </header>
+        
+        
+        <main class="flex flex-column mx-auto w-80">
+            <section id="menu">
+                <!-- menu items go here via JS -->
+            </section>
+            
+            <section id="checkout" class="d-none">
+                <h2 class="text-center">Your Order</h2>
+                <div id="items-and-total">
+                    <!-- checkout items go here via JS -->
+                </div>
+                <div class="b-black"></div>
+                <div class="flex align-center justify-between w-100">
+                    <h2>Total Price:</h2>
+                    <p class="price" id="total"></p>
+                </div>   
+                
+                <button id="checkout-btn" class="my-1">Complete Order</button>
+            </section>
+            
+            <dialog id="modal" class="text-center d-none">
+                <form class="flex flex-column justify-between">
+                    <h2>Enter card details</h2>
+                    <input placeholder="Enter your name">
+                    <input placeholder="Enter your card number">
+                    <input placeholder="Enter CVV">
+                    <button id="pay-btn" type="button">Pay</button>
+                </form>
+            </dialog>
+        </main>    
+        </div>
+        
+	    <script src="index.js" type="module"></script>
+    </body>
+</html>
+
