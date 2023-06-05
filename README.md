@@ -1,7 +1,5 @@
 # Restaurant Ordering App
 
-## About
-
 This app has given allowed me to explore new JS concepts that I was not too comfortable with such as:
 
 - SetTimeout()
