@@ -1,21 +1,11 @@
-# co3974536bd3d884963f3ba20
+# Restaurant Ordering App
 
-Quick start:
+## About
 
-```
-$ npm install
-$ npm start
-````
+This app has given allowed me to explore new JS concepts that I was not too comfortable with such as:
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
+- SetTimeout()
+- Utilizing data attributes to target items I needed to interact with  
+- forEach() instead of for...of to loop over arrays
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
-
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
-
-Happy Coding!
+I created this app according to a design file given to me on Figma. Then I chaged/added a few of my own touches including the logo and images.
