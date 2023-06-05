@@ -111,7 +111,9 @@ h2 {
 
 #menu button p{
     margin: 0;
-    padding: 0.5em;
+    padding: 0.3em;
+    line-height: 0.5em;
+    font-size: 2.2em;
 }
 
 #checkout div button{
