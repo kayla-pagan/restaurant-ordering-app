@@ -4,7 +4,7 @@ body {
     font-size: 16px;
 }
 .container{
-    width: 40em;
+    width: 90%;
     height: auto;
     margin: 0 auto;
 }
@@ -132,7 +132,7 @@ h2 {
 #checkout div button {
     color: #bbbbbb;
     display: inline-block;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     padding: 0.5em 1em;
 }
 
@@ -224,4 +224,12 @@ dialog {
     height: 12em;
     width: 15em;
     border-radius: 1em;
+}
+
+/* media queries */
+
+@media (min-width: 1024px){
+    .container {
+        width: 55%;
+    }
 }
