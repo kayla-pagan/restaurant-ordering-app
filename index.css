@@ -109,13 +109,6 @@ h2 {
     border: 1.5px solid #bbbbbb;
 }
 
-#menu button p{
-    margin: 0;
-    padding: 0.3em;
-    line-height: 0.5em;
-    font-size: 2.2em;
-}
-
 #checkout div button{
     border: none;    
 }
@@ -208,7 +201,7 @@ dialog {
     padding: 1.1em 1em;
 }
 
-i{
+.submit i{
     position: absolute;
     top: 0.5em;
     right: 0.7em;

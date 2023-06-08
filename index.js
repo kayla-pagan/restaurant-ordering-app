@@ -118,8 +118,8 @@ function getMenuHtml(){
                             <p>$${menuItem.price}</p> 
                         </div>
                     </div>
-                    <button class"flex justify-center align-center">
-                        <p data-add="${menuItem.id}">+</p>
+                    <button data-add="${menuItem.id}" class"flex justify-center align-center">
+                        <i data-add="${menuItem.id}" class="fa-solid fa-plus"></i>
                     </button>
                 </div>
         `
