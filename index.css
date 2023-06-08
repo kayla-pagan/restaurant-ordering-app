@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: 'Smythe', cursive;
     font-size: 16px;
+    box-sizing: border-box;
 }
 .container{
     width: 98%;
