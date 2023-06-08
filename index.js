@@ -17,9 +17,6 @@ document.addEventListener('click', function(e){
     else if(e.target.id === 'checkout-btn'){
         displayModal()
     }
-    else if(e.target.id === 'pay-btn'){
-        submitPayment(e)        
-    }
     else if(e.target.id === 'close-btn'){
         closeModal()
     }
@@ -95,16 +92,16 @@ function closeModal(){
     <i id="close-btn" class="fa-duotone fa-x" style="--fa-secondary-opacity: 0.4;"></i>
     <form id="form" class="flex flex-column justify-between">
         <h2>Enter card details</h2>
-        <input placeholder="Enter your name">
-        <input placeholder="Enter your card number">
-        <input placeholder="Enter CVV">
-        <button id="pay-btn" type="button">Pay</button>
+        <input required type="text" placeholder="Enter your name">
+        <input required type="number" placeholder="Enter your card number">
+        <input required type="number" placeholder="Enter CVV">
+        <button id="pay-btn">Pay</button>
     </form>`
     
     resetCheckout()
 }
 
-function submitPayment(e){
+document.getElementById('form').addEventListener('submit', function submitPayment(e){
     e.preventDefault()
     
     setTimeout(function(){
@@ -119,7 +116,7 @@ function submitPayment(e){
             <h2>We'll notify you when your order is ready</h2>
        </div>` 
     }, 600)
-}
+})
 
 function getMenuHtml(){
     let menuHtml = ``
