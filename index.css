@@ -207,13 +207,17 @@ dialog {
     padding: 1.1em 1em;
 }
 
-.submit i{
+#modal i, .submit i{
     position: absolute;
     top: 0.5em;
-    right: 0.7em;
-    font-size: 1.5em;
+    right: 0.5em;
+    font-size: 1.4em;
     opacity: 0.6;
     font-style: inherit;
+}
+
+#modal i:hover, .submit i:hover{
+    color: #e15d55;
 }
 
 .submit div img {

@@ -28,9 +28,28 @@ document.addEventListener('click', function(e){
 
 
 
-function renderAddTotal(orderItem){
-    totalPrice += orderItem.price
-    document.getElementById('total').textContent = `\$${totalPrice}`
+
+function handleAddClick(foodId){
+    const targetFoodObj = menuArray.filter( (menuItem) => {
+        return menuItem.id == foodId
+    } )[0]
+    
+    renderOrder(targetFoodObj)
+}
+
+function hideCart(){
+    if(itemsAndTotal.childElementCount < 1){
+        checkout.classList.add("d-none")
+    }
+}
+
+function handleRemoveClick(foodId,clicked){
+    const targetFoodObj = menuArray.filter( (menuItem) => {
+        return menuItem.id == foodId
+    } )[0]
+    renderSubtractTotal(targetFoodObj)
+    clicked.target.closest('#order-item').remove()
+    hideCart()
 }
 
 function renderOrder(orderItem){
@@ -49,32 +68,14 @@ function renderOrder(orderItem){
     renderAddTotal(orderItem)
 }
 
-function handleAddClick(foodId){
-    const targetFoodObj = menuArray.filter( (menuItem) => {
-        return menuItem.id == foodId
-    } )[0]
-    
-    renderOrder(targetFoodObj)
+function renderAddTotal(orderItem){
+    totalPrice += orderItem.price
+    document.getElementById('total').textContent = `\$${totalPrice}`
 }
 
 function renderSubtractTotal(targetFoodObj){
     totalPrice -= targetFoodObj.price
     document.getElementById('total').textContent = `\$${totalPrice}`
-}
-
-function hideCart(){
-    if(itemsAndTotal.childElementCount < 1){
-        checkout.classList.add("d-none")
-    }
-}
-
-function handleRemoveClick(foodId,clicked){
-    const targetFoodObj = menuArray.filter( (menuItem) => {
-        return menuItem.id == foodId
-    } )[0]
-    renderSubtractTotal(targetFoodObj)
-    clicked.target.closest('#order-item').remove()
-    hideCart()
 }
 
 function displayModal(){
@@ -91,6 +92,7 @@ function resetCheckout(){
 function closeModal(){
     modal.style.display = 'none'
     modal.innerHTML = `
+    <i id="close-btn" class="fa-duotone fa-x" style="--fa-secondary-opacity: 0.4;"></i>
     <form id="form" class="flex flex-column justify-between">
         <h2>Enter card details</h2>
         <input placeholder="Enter your name">

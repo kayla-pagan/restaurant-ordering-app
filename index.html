@@ -1,5 +1,5 @@
 <html>
-    <head>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="index.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Font Awesome -->
@@ -36,7 +36,8 @@
             </section>
             
             <dialog id="modal" class="text-center d-none">
-                <form class="flex flex-column justify-between">
+                <i id="close-btn" class="fa-duotone fa-x" style="--fa-secondary-opacity: 0.4;"></i>
+                <form id="form" class="flex flex-column justify-between">
                     <h2>Enter card details</h2>
                     <input placeholder="Enter your name">
                     <input placeholder="Enter your card number">
