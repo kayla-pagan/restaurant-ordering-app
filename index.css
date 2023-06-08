@@ -83,18 +83,18 @@ body {
 }
 
 header img {
-    width: 20em;
+    width: 16em;
     height: auto;
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 400;
 }
 
 #menu img{
-    width: 8em;
-    height: 8em;
+    width: 6em;
+    height: 6em;
     border-radius: 10%;
     box-shadow: 0 0 5px #393333;
 }
@@ -105,11 +105,11 @@ h2 {
 }
 
 #menu p {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 #menu button{
-    width: 20em;
+    width: 15em;
     height: 3.5em;
     border-radius: 0.5em;
     border: 2px solid #bbbbbb;
@@ -237,6 +237,36 @@ dialog {
 }
 
 /* media queries */
+
+@media (min-width: 480px){
+    header img {
+        width: 20em;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+
+    #menu img{
+        width: 8em;
+        height: 8em;
+        border-radius: 10%;
+        box-shadow: 0 0 5px #393333;
+    }
+
+    #menu p {
+        font-size: 1.2rem;
+    }
+
+    #menu button{
+        width: 20em;
+        height: 3.5em;
+        border-radius: 0.5em;
+        border: 2px solid #bbbbbb;
+    }
+}
 
 @media (min-width: 768px){
     h2 {
