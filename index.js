@@ -109,19 +109,19 @@ function getMenuHtml(){
         
         menuHtml += 
         `
-            <div class="flex justify-between align-center bb-grey py-2">
-                    <div class="item-info flex align-center gap-2">
-                        <img src="${menuItem.image}" class="menu-img">
-                        <div>
-                           <h2>${menuItem.name}</h2>
-                            <p class="fc-light-grey">${menuItem.ingredients}</p>
-                            <p>$${menuItem.price}</p> 
-                        </div>
+            <div class="flex flex-column justify-between align-center bb-grey py-2">
+                <div class="item-info flex align-center gap-2">
+                    <img src="${menuItem.image}" class="menu-img">
+                    <div>
+                        <h2>${menuItem.name}</h2>
+                        <p class="fc-light-grey">${menuItem.ingredients}</p>
+                        <p>$${menuItem.price}</p> 
                     </div>
-                    <button data-add="${menuItem.id}" class"flex justify-center align-center">
-                        <i data-add="${menuItem.id}" class="fa-solid fa-plus"></i>
-                    </button>
                 </div>
+                <button data-add="${menuItem.id}" class"flex justify-center align-center">
+                    <i data-add="${menuItem.id}" class="fa-solid fa-plus"></i>
+                </button>
+            </div>
         `
     })
     return menuHtml

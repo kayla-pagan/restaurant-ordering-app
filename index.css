@@ -6,7 +6,7 @@ body {
 }
 .container{
     width: 98%;
-    height: auto;
+    height: 100vh;
     margin: 0 auto;
 }
 
@@ -20,6 +20,10 @@ body {
 
 .justify-between {
     justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
 }
 
 .align-center {
@@ -103,11 +107,12 @@ h2 {
 #menu p {
     font-size: 1.6rem;
 }
+
 #menu button{
-    width: 3.5em;
+    width: 23em;
     height: 3.5em;
-    border-radius: 50%;
-    border: 1.5px solid #bbbbbb;
+    border-radius: 0.5em;
+    border: 2px solid #bbbbbb;
 }
 
 #checkout div button{
@@ -232,6 +237,20 @@ dialog {
 @media (min-width: 1024px){
     .container {
         width: 55%;
-        height: 100vh;
+        height: auto;
+    }
+}
+
+@media (min-width: 768px){
+    #menu > div{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;        
+    }
+    
+    #menu button{
+        width: 3.5em;
+        height: 3.5em;
+        border-radius: 50%;
     }
 }
