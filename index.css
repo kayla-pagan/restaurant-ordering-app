@@ -238,7 +238,7 @@ dialog {
 
 /* media queries */
 
-@media (min-width: 480px){
+@media (min-width: 320px){
     header img {
         width: 20em;
         height: auto;
