@@ -1,5 +1,7 @@
 import { menuArray } from '/data.js'
 const modal = document.getElementById('modal')
+const checkout = document.getElementById('checkout')
+const itemsAndTotal = document.getElementById('items-and-total')
 const checkoutBtn = document.getElementById('checkout-btn')
 const payBtn = document.getElementById('pay-btn')
 let totalPrice = 0
@@ -26,33 +28,14 @@ document.addEventListener('click', function(e){
 
 
 
-
-function handleAddClick(foodId){
-    const targetFoodObj = menuArray.filter( (menuItem) => {
-        return menuItem.id == foodId
-    } )[0]
-    
-    renderOrder(targetFoodObj)
-}
-
-function hideCart(){
-    if(document.getElementById('items-and-total').childElementCount < 1){
-        document.getElementById('checkout').classList.add("d-none")
-    }
-}
-
-function handleRemoveClick(foodId,clicked){
-    const targetFoodObj = menuArray.filter( (menuItem) => {
-        return menuItem.id == foodId
-    } )[0]
-    renderSubtractTotal(targetFoodObj)
-    clicked.target.closest('#order-item').remove()
-    hideCart()
+function renderAddTotal(orderItem){
+    totalPrice += orderItem.price
+    document.getElementById('total').textContent = `\$${totalPrice}`
 }
 
 function renderOrder(orderItem){
     document.getElementById('checkout').classList.remove("d-none")
-    document.getElementById('items-and-total').innerHTML += `
+    itemsAndTotal.innerHTML += `
          <div id="order-item" class="flex align-center justify-between w-100">
             <div class="flex align-center">
                 <h2>${orderItem.name}</h2>
@@ -66,9 +49,12 @@ function renderOrder(orderItem){
     renderAddTotal(orderItem)
 }
 
-function renderAddTotal(orderItem){
-    totalPrice += orderItem.price
-    document.getElementById('total').textContent = `\$${totalPrice}`
+function handleAddClick(foodId){
+    const targetFoodObj = menuArray.filter( (menuItem) => {
+        return menuItem.id == foodId
+    } )[0]
+    
+    renderOrder(targetFoodObj)
 }
 
 function renderSubtractTotal(targetFoodObj){
@@ -76,13 +62,44 @@ function renderSubtractTotal(targetFoodObj){
     document.getElementById('total').textContent = `\$${totalPrice}`
 }
 
+function hideCart(){
+    if(itemsAndTotal.childElementCount < 1){
+        checkout.classList.add("d-none")
+    }
+}
+
+function handleRemoveClick(foodId,clicked){
+    const targetFoodObj = menuArray.filter( (menuItem) => {
+        return menuItem.id == foodId
+    } )[0]
+    renderSubtractTotal(targetFoodObj)
+    clicked.target.closest('#order-item').remove()
+    hideCart()
+}
+
 function displayModal(){
     modal.classList.remove("d-none")
     modal.style.display = 'block' 
 }
 
+function resetCheckout(){
+    itemsAndTotal.innerHTML = ''
+    totalPrice = 0
+    checkout.classList.add("d-none")
+}
+
 function closeModal(){
     modal.style.display = 'none'
+    modal.innerHTML = `
+    <form id="form" class="flex flex-column justify-between">
+        <h2>Enter card details</h2>
+        <input placeholder="Enter your name">
+        <input placeholder="Enter your card number">
+        <input placeholder="Enter CVV">
+        <button id="pay-btn" type="button">Pay</button>
+    </form>`
+    
+    resetCheckout()
 }
 
 function submitPayment(e){
@@ -109,7 +126,7 @@ function getMenuHtml(){
         
         menuHtml += 
         `
-            <div class="flex flex-column justify-between align-center bb-grey gap-1 py-2">
+            <div class="flex flex-column justify-between align-center gap-1 bb-grey py-2">
                 <div class="item-info flex align-center gap-2">
                     <img src="${menuItem.image}">
                     <div>
