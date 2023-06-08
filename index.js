@@ -111,7 +111,7 @@ function getMenuHtml(){
         `
             <div class="flex flex-column justify-between align-center bb-grey gap-1 py-2">
                 <div class="item-info flex align-center gap-2">
-                    <img src="${menuItem.image}" class="menu-img">
+                    <img src="${menuItem.image}">
                     <div>
                         <h2>${menuItem.name}</h2>
                         <p class="fc-light-grey">${menuItem.ingredients}</p>
