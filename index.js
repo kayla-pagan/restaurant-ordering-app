@@ -25,28 +25,9 @@ document.addEventListener('click', function(e){
 
 
 
-
-function handleAddClick(foodId){
-    const targetFoodObj = menuArray.filter( (menuItem) => {
-        return menuItem.id == foodId
-    } )[0]
-    
-    renderOrder(targetFoodObj)
-}
-
-function hideCart(){
-    if(itemsAndTotal.childElementCount < 1){
-        checkout.classList.add("d-none")
-    }
-}
-
-function handleRemoveClick(foodId,clicked){
-    const targetFoodObj = menuArray.filter( (menuItem) => {
-        return menuItem.id == foodId
-    } )[0]
-    renderSubtractTotal(targetFoodObj)
-    clicked.target.closest('#order-item').remove()
-    hideCart()
+function renderAddTotal(orderItem){
+    totalPrice += orderItem.price
+    document.getElementById('total').textContent = `\$${totalPrice}`
 }
 
 function renderOrder(orderItem){
@@ -65,14 +46,32 @@ function renderOrder(orderItem){
     renderAddTotal(orderItem)
 }
 
-function renderAddTotal(orderItem){
-    totalPrice += orderItem.price
-    document.getElementById('total').textContent = `\$${totalPrice}`
+function handleAddClick(foodId){
+    const targetFoodObj = menuArray.filter( (menuItem) => {
+        return menuItem.id == foodId
+    } )[0]
+    
+    renderOrder(targetFoodObj)
+}
+
+function hideCart(){
+    if(itemsAndTotal.childElementCount < 1){
+        checkout.classList.add("d-none")
+    }
 }
 
 function renderSubtractTotal(targetFoodObj){
     totalPrice -= targetFoodObj.price
     document.getElementById('total').textContent = `\$${totalPrice}`
+}
+
+function handleRemoveClick(foodId,clicked){
+    const targetFoodObj = menuArray.filter( (menuItem) => {
+        return menuItem.id == foodId
+    } )[0]
+    renderSubtractTotal(targetFoodObj)
+    clicked.target.closest('#order-item').remove()
+    hideCart()
 }
 
 function displayModal(){
